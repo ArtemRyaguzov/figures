@@ -1,0 +1,19 @@
+{
+  "name": "figures",
+  "version": "1.0.0",
+  "description": "app for code test ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemRyaguzov/figures.git"
+  },
+  "author": "Artem Ryaguzov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ArtemRyaguzov/figures/issues"
+  },
+  "homepage": "https://github.com/ArtemRyaguzov/figures#readme"
+}
