@@ -3,11 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Figures</title>
 </head>
 <body>
 
-    <h1>Figures</h1>
+    <div class="app">
+
+        <form class="form">
+            <input class="form__input" type="text">
+            <button class="form__btn form__addInput">+Фигура</button>
+            <button class="form__btn" type="submit">Отрисовать</button>
+        </form>
+
+        <section class="description">
+            <div class="figures">
+                <h3 class="figures__header">Поддерживаемые фигуры</h3>
+                <ul class="figures__list">
+                    <li class="figures__list-item">Линии</li>
+                    <li class="figures__list-item">Прямоугольники</li>
+                    <li class="figures__list-item">Треугольники</li>
+                    <li class="figures__list-item">Круги</li>
+                    <li class="figures__list-item">Эллипсы</li>
+                    <li class="figures__list-item">Кубические кривые Безье</li>
+                    <li class="figures__list-item">Квадратичные кривые Безье</li>
+                </ul>
+            </div>
+
+            <div class="usage">
+                <h3 class="usage__header">Примеры</h3>
+                <ul class="usage__list">
+                    <li class="usage__example">line -p [50 50] [500 50] -c rgb(255, 0, 0) -w 10</li>
+                    <li class="usage__example">rectangle -p [50 50] [100 100] -c rgba(0, 255, 0, 0.7) -b rgba(255, 0, 0, 0.3) -w 5</li>
+                    <li class="usage__example">triangle -p [50 50] [50 100] [100 100] -c blue -b rgba(255, 0, 0, 0.3) -w 10</li>
+                    <li class="usage__example">circle -p [100 100] -r 75 -c rgb(255, 0, 0) -b rgba(0, 255, 0, 0.3)</li>
+                    <li class="usage__example">ellipse -p [150 150] -r 100 -R 0.5 -c rgb(0, 255, 0) -b rgba(255, 0, 0, 0.3)</li>
+                    <li class="usage__example">line -p [50 20] [230 30 150 60 50 100] -c rgb(255, 0, 0) -w 10 -t bezierCurve</li>
+                    <li class="usage__example">line -p [20 110] [230 150 250 20] -c rgb(255, 0, 0) -w 10 -t quadraticCurve</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+    <script src="model.js"></script>
+    <script>
+
+        const canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const model = new Model();
+        const controller = new Controller(model);
+        const view = new View(controller);
+
+    </script>
     
 </body>
 </html>
